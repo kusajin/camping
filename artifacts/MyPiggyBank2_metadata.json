@@ -51,7 +51,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "depositReceipts",
+				"name": "depositReceiptInfo",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -61,32 +61,6 @@
 					{
 						"internalType": "uint256",
 						"name": "depositAmount",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "depositTimes",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "depositTotalAmount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -107,12 +81,36 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"name": "getDepistInfo",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "_index",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "lastDepositTime",
+				"name": "getDepositAmount",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -127,7 +125,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "modifyDepositRatio",
+				"name": "updateDepositRatio",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -172,7 +170,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/MyPiggBank.sol": "MyPiggyBank"
+			"contracts/MyPiggBank2.sol": "MyPiggyBank2"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -186,12 +184,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/MyPiggBank.sol": {
-			"keccak256": "0xeead082ff133cbd7ff969524cb448b7e1c8dcd958def8a37bdad54e5af45abb1",
+		"contracts/MyPiggBank2.sol": {
+			"keccak256": "0x13a80cdf858157d5591efb1017cf185ad0e7269802905cc59bad74b214202a9f",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://48d3200b8cb912876a92f2f0128e9eb2edab9351b0f033443be023f8db093aae",
-				"dweb:/ipfs/QmZGKo2iSf7GjEvq75FiNP4zaaY28TZFqi3H8TTMzLC1ZT"
+				"bzz-raw://36a28fe95388ed55a3a56177426e45f7a47c5f81f756da9bbfb7a44021204333",
+				"dweb:/ipfs/QmV7DgpAcAMtrPt9c7ypfMQw6bGk8dHqD3D48YeGELwqa3"
 			]
 		}
 	},
