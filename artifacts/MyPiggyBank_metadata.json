@@ -11,6 +11,25 @@
 				"type": "constructor"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "timeStamp",
+						"type": "uint256"
+					}
+				],
+				"name": "availableAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "cash",
 				"outputs": [
@@ -82,33 +101,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "depositTotalAmount",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "getBlockTime",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "lastDepositTime",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -130,6 +123,19 @@
 				"name": "modifyDepositRatio",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -187,11 +193,11 @@
 	},
 	"sources": {
 		"contracts/MyPiggBank.sol": {
-			"keccak256": "0x610bbabf75f8dd65f6e5051f80e573f2e0aa891ed589f2ea21858db6a83f25e2",
+			"keccak256": "0x0020b0bee569993ee50b137349387e1706f705b84bd50ef85f8f48fa3706d04c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6225011bcfd0bcaf38ff4571fbcd75d0799c910ecd35670d2ec7239e9ca996a3",
-				"dweb:/ipfs/QmYgbSGS5Kttpa2J6XZvrmcGS1nrfbUvzvhWDuDD8NhPdJ"
+				"bzz-raw://931ca12f266301dba49290ec0a6e810a9592ccd6cc82c52d9cf09ade26ae6a91",
+				"dweb:/ipfs/QmXiXNV4BkP9ywEesHAnyMES7Zn22WWTSxtA2ZAMbCC3Y4"
 			]
 		}
 	},
