@@ -52,8 +52,7 @@ contract MyPiggyBank {
     function modifyDepositRatio(
         uint256 _depositRatio
     ) external checkDepositRatio(_depositRatio) onlyOwner {
-        depositRatio = _depositRatio;
-        
+        depositRatio = _depositRatio;        
     }
 
     //deposit method  require eth >0
@@ -64,13 +63,12 @@ contract MyPiggyBank {
             _depoistAmount = 0;
         } else {
           _depoistAmount = (msg.value * depositRatio) / 100;
-          depositReceipts[depositTimes]= depositReceipt(_depositTime, _depoistAmount);
+          depositReceipts[depositTimes] = depositReceipt(_depositTime, _depoistAmount);
           depositTimes++;
           lastDepositTime = _depositTime;
           depositTotalAmount += _depoistAmount;
         }
-        uint256 splitAmount = msg.value - _depoistAmount;
-        cash += splitAmount;
+        cash += msg.value - _depoistAmount;
     }
 
     //withraw cash method
@@ -81,22 +79,21 @@ contract MyPiggyBank {
     }
 
     //withraw deposited amount method
-    function withdrawDeposit(uint256 amount) external onlyOwner {     
-      uint256  timeStamp = block.timestamp;
-      require( lastDepositTime < timeStamp," it`s not time yet ");
+    function withdrawDeposit(uint256 amount) external onlyOwner {
+      require( lastDepositTime < block.timestamp," it's not time yet ");
       require( depositTotalAmount > amount," not have engouht amount to withdraw ");       
       payable(msg.sender).transfer(amount);
       depositTotalAmount -= amount ;
         for (uint256 i = 0; i < depositTimes; i++) {
-          uint256 _depositAmount = depositReceipts[i].depositAmount;         
-          if (_depositAmount <= amount) {
-            depositReceipts[i].depositAmount = 0;
-            amount -= _depositAmount;
-          } else {
-            depositReceipts[i].depositAmount -= amount;
-            amount = 0;
-            break ;
-          }
+            uint256 _depositAmount = depositReceipts[i].depositAmount;         
+            if (_depositAmount <= amount) {
+                depositReceipts[i].depositAmount = 0;
+                amount -= _depositAmount;
+            } else {
+                depositReceipts[i].depositAmount -= amount;
+                amount = 0;
+                break ;
+            }
         }
     }
 

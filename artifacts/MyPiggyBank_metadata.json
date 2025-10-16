@@ -187,11 +187,11 @@
 	},
 	"sources": {
 		"contracts/MyPiggBank.sol": {
-			"keccak256": "0xeead082ff133cbd7ff969524cb448b7e1c8dcd958def8a37bdad54e5af45abb1",
+			"keccak256": "0x8c5b3a8cfe28404682e2b224cd3a109eb1b9d3df0db3c72b04a0c32d80c8fbac",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://48d3200b8cb912876a92f2f0128e9eb2edab9351b0f033443be023f8db093aae",
-				"dweb:/ipfs/QmZGKo2iSf7GjEvq75FiNP4zaaY28TZFqi3H8TTMzLC1ZT"
+				"bzz-raw://979967f0a237aa2b119da373468e3c284c097baef2e7034ffe40c6c37414c112",
+				"dweb:/ipfs/QmdsdgKrSQr73qSam3MTw6n2veCwKmkrawwb1dkqzWiDCZ"
 			]
 		}
 	},
