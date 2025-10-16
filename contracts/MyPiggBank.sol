@@ -91,7 +91,6 @@ contract MyPiggyBank {
                 amount -= _depositAmount;
             } else {
                 depositReceipts[i].depositAmount -= amount;
-                amount = 0;
                 break ;
             }
         }
