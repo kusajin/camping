@@ -15,11 +15,6 @@ contract MyPiggyBank {
         _;
     }
 
-    modifier checkDeposit() {
-        require(!isDeposit, " you can't ");
-        _;
-    }
-
     modifier sendMoreEth() {
         require(msg.value > 0, "need send eth");
         _;
@@ -36,22 +31,20 @@ contract MyPiggyBank {
         uint256 depositAmount;
     }
 
-    depositReceipt[] private depositReceiptInfo;
+    depositReceipt[] public depositReceiptInfo;
 
     //deposited amount freezed seconds, 1 minutes for tutorial purpose
     uint256 constant freezeTime = 1 minutes;
 
     uint256 public depositRatio;
 
-    bool isDeposit = false;
-
-    constructor() {
+     constructor() {
         owner = msg.sender;
     }
 
     function updateDepositRatio(
         uint256 _depositRatio
-    ) external checkDepositRatio(_depositRatio) checkDeposit onlyOwner {
+    ) external checkDepositRatio(_depositRatio) onlyOwner {
         depositRatio = _depositRatio;
         
     }
@@ -70,7 +63,6 @@ contract MyPiggyBank {
         }
         uint256 splitAmount = msg.value - _depoistAmount;
         cash += splitAmount;
-        isDeposit=true;
     }
 
     //withraw cash method
@@ -103,7 +95,7 @@ contract MyPiggyBank {
     }
 
     function getDepistInfo()
-        internal
+        public
         view
         returns (uint[] memory _index, uint256 amount)
     {
@@ -115,5 +107,11 @@ contract MyPiggyBank {
                 j++;
             }
         }
+    }
+
+    function getDepositAmount() public view returns (uint256  amount){
+      for (uint256 i = 0; i < depositReceiptInfo.length; i++) {
+        amount += depositReceiptInfo[i].depositAmount ;
+      }
     }
 }
